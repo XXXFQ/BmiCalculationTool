@@ -18,8 +18,8 @@ namespace BmiCalculationTool.HealthCalculator
         /// </summary>
         public string GetBmiCategory()
         {
-            if (BmiValue < _thinnessThreshold) return "痩せすぎです";
-            if (BmiValue >= _obesityThreshold) return "太り過ぎです";
+            if (BmiValue < ThinnessThreshold) return "痩せすぎです";
+            if (BmiValue >= ObesityThreshold) return "太り過ぎです";
             return "適正範囲です";
         }
 
@@ -47,6 +47,18 @@ namespace BmiCalculationTool.HealthCalculator
         /// </summary>
         /// <returns>体重(kg)</returns>
         public double Weight { get; }
+
+        /// <summary>
+        /// BMIの痩せすぎ基準値
+        /// </summary>
+        /// <returns>痩せすぎ基準値</returns>
+        public double ThinnessThreshold => _thinnessThreshold;
+
+        /// <summary>
+        /// BMIの太り過ぎ基準値
+        /// </summary>
+        /// returns>太り過ぎ基準値</returns>
+        public double ObesityThreshold => _obesityThreshold;
 
         /// <summary>
         /// BMI値を算出して取得する
